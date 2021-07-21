@@ -25,17 +25,18 @@ export default function Login() {
                 className="auth-form"
                 initialValues={{ remember: true }}
                 onFinish={(values) => onFinish(values)}
-                
+
             >
+
                 <Form.Item
                     name="username"
-                    rules={[{ required: true, message: 'Please input your Username!' }]}
+                    rules={[{ required: true, message: 'Enter valid username' }]}
                 >
                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
                 </Form.Item>
                 <Form.Item
                     name="password"
-                    rules={[{ required: true, message: 'Please input your Password!' }]}
+                    rules={[{ required: true, message: 'Enter valid password' }]}
                 >
                     <Input
                         prefix={<LockOutlined className="site-form-item-icon" />}

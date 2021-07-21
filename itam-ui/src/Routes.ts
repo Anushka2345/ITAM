@@ -22,7 +22,8 @@ import BlankPage from "./Views/Pages/BlankPage";
 import Page404 from "./Views/Pages/Page404";
 import Page403 from "./Views/Pages/Page403";
 import Page500 from "./Views/Pages/Page500";
-import Login from "./Views/Pages/Login"
+import Login from "./Views/Pages/Login";
+import register from "./Views/Pages/register";
 const Routes: RouteType[] = [
     // Default 404 Not Found Page
     
@@ -66,6 +67,13 @@ const Routes: RouteType[] = [
                 layout: "/auth",
                 isSidemenu: true,
             },
+            { path: "/register",
+                name: "Sign Up",
+                icon: MinusOutlined,
+                component: register,
+                layout: "/auth",
+                isSidemenu: true,
+            },
             {
                 path: "/pages/404",
                 name: "404",
@@ -105,6 +113,14 @@ const Routes: RouteType[] = [
         name: "Login",
         icon: MinusOutlined,
         component: Login,
+        layout: "/auth",
+        isSidemenu: false,
+    },
+    {
+        path: "/register",
+        name: "Sign Up",
+        icon: MinusOutlined,
+        component: register,
         layout: "/auth",
         isSidemenu: false,
     },

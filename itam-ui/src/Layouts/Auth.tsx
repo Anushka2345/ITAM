@@ -23,20 +23,14 @@ export default class AuthLayout extends Component<RouteComponentProps> {
             return null;
         });
     };
-
     render() {
         return (
-            
-                <Layout id="auth-layout">
+            <Layout id="auth-layout">
                 <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
                     <Switch>{this.getRoutes(Routes)}</Switch>
-                
                 </Content>
                 <AdminFooter />
-            </Layout> 
-            
-           
-            
+            </Layout>
         )
     }
 }
