@@ -3,8 +3,15 @@ import { Form, Input, Button, Checkbox, Card, Image } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom"
 import Logo from "../../assets/antd.png"
+import axios from 'axios';
 
 export default function Login() {
+
+    async function onFinish(values: any)  {
+        const response = await axios.post("http://127.0.0.1:5000/login", values)
+        console.log(response)
+    }
+
     return (
         <Card id="auth-card">
             <Image
@@ -17,7 +24,8 @@ export default function Login() {
                 name="normal_login"
                 className="auth-form"
                 initialValues={{ remember: true }}
-                onFinish={(values) => console.log(values)}
+                onFinish={(values) => onFinish(values)}
+                
             >
                 <Form.Item
                     name="username"
