@@ -3,7 +3,15 @@ import { Form, Input, Button, Checkbox, Card, Image } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom"
 import Logo from "../../assets/antd.png"
+import axios from 'axios';
+
 export default function register() {
+
+    async function onFinish(values: any)  {
+        const response = await axios.post("http://127.0.0.1:5000/register", values)
+        console.log(response)
+    }
+
     return (
         <Card id="auth-card">
             <Image
@@ -16,8 +24,10 @@ export default function register() {
                 name="normal_login"
                 className="auth-form"
                 initialValues={{ remember: true }}
-                onFinish={(values) => console.log(values)}
+                onFinish={(values) => onFinish(values)}
+
             >
+
                 <Form.Item
                     name="email"
                     rules={[{ required: true, message: 'This is a required field' }]}
@@ -25,16 +35,23 @@ export default function register() {
                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
                 </Form.Item>
                 <Form.Item
-                    name="First name"
+                    name="Firstname"
                     rules={[{ required: true, message: 'This is a required field' }]}
                 >
                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="First Name" />
                 </Form.Item>
                  <Form.Item
-                    name="Last name"
+                    name="Lastname"
                     rules={[{ required: true, message: 'This is a required field' }]}
                 >
                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Last Name" />
+                </Form.Item>
+
+                <Form.Item
+                    name="username"
+                    rules={[{ required: true, message: 'This is a required field' }]}
+                >
+                    <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
                 </Form.Item>
 
                 <Form.Item
