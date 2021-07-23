@@ -1,15 +1,23 @@
 import React from 'react'
-import { Form, Input, Button, Checkbox, Card, Image } from 'antd';
+import { useState } from 'react';
+import { Form, Input, Button, Checkbox, Card, Image} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom"
 import Logo from "../../assets/antd.png"
 import axios from 'axios';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 
-export default function Login() {
+export default function Login(props: any) {
+
+    const [error, setError] = useState(false)
+
+    function Alert(props: any) {
+        return <MuiAlert elevation={6} variant="filled" {...props} />;
+      }
 
     async function onFinish(values: any)  {
-        const response = await axios.post("http://127.0.0.1:5000/login", values)
-        console.log(response)
+        const response = await axios.post("http://127.0.0.1:5000/login", values).then(res => setError(false)).catch(e => setError(true))
     }
 
     return (
@@ -20,6 +28,10 @@ export default function Login() {
                 src={Logo}
                 preview={false}
             />
+            {error? <Snackbar open={error} autoHideDuration={6000} anchorOrigin={{ vertical: "top", horizontal: "center"}}>
+                <Alert severity="error" >enter valid username and password</Alert>
+                </Snackbar> : <div></div>}
+
             <Form
                 name="normal_login"
                 className="auth-form"
