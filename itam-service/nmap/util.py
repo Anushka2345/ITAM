@@ -7,6 +7,10 @@ sys.path.append(nmap_path)
 
 scanner = nmap.PortScanner()
 
+nmap_profiles = {
+    "initial_scan": "-n -sP" 
+}
+
 def synAckScan(hosts="", ip_addr=""):
     arguments = "-sn -PS"
     print("Nmap Version: {}".format(scanner.nmap_version()))
@@ -20,5 +24,6 @@ def synAckScan(hosts="", ip_addr=""):
 def ping_scan(hosts="", ip_addr=""):
     arguments = '-sn'
     
+#def performInitailScan(hosts="", ip_addr="")
 
 synAckScan(hosts='192.168.0.1/24')

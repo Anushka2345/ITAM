@@ -121,58 +121,33 @@ export default function Dashboard() {
     }
     return (
         <Row gutter={[16, 16]}>
-            <Col span={24}>
-                <Card bordered>
-                    <Title level={3}>Asset Management Tool</Title>
-                    <Text>This tool provides a wholesome solution to manage lifecycles of your assets in a automated way.</Text>
+             <Col span={12}>
+                 <Card style={{minHeight:"600px"}} bordered>
+                     <Title level={3}></Title>
+                     <Row gutter={[16,16]}>
+                       <Col  span={24}>
+                         <Card style={{minHeight:"200px"}} bordered>
+                           <Statistic title="Projects" value={23} prefix={<FolderTwoTone twoToneColor="#F63E4F" />} />
+                         </Card>
+                       </Col>
+                       <Col xs={24} sm={24} md={12}>
+                           <Card style={{minHeight:"284px"}} bordered>
+                              <Statistic title="Developers" value={57} prefix={<SmileTwoTone twoToneColor="#27\C7FF" />} />
+                            </Card>
+                       </Col>
+                       <Col xs={24} sm={24} md={12}>
+                           <Card style={{minHeight:"284px"}} bordered>
+                              <Statistic title="Developers" value={57} prefix={<SmileTwoTone twoToneColor="#27\C7FF" />} />
+                            </Card>
+                       </Col>
+                     </Row>
+                 </Card>
+             </Col>
+             <Col xs={24} sm={24} md={12}>
+                  <Card style={{minHeight:"600px"}} bordered>
                 </Card>
-            </Col>
-            <Col xs={24} sm={24} md={6}>
-                <Card bordered>
-                    <Statistic title="Projects" value={23} prefix={<FolderTwoTone twoToneColor="#F63E4F" />} />
-                </Card>
-            </Col>
-            <Col xs={24} sm={24} md={6}>
-                <Card bordered>
-                    <Statistic title="Developers" value={57} prefix={<SmileTwoTone twoToneColor="#27C7FF" />} />
-                </Card>
-            </Col>
-            <Col xs={24} sm={24} md={6}>
-                <Card bordered>
-                    <Statistic title="Meeeting" value={17} prefix={<CalendarTwoTone twoToneColor="#F63848" />} />
-                </Card>
-            </Col>
-            <Col xs={24} sm={24} md={6}>
-                <Card bordered>
-                    <Statistic title="Bug Fixed" value={87} prefix={<BugTwoTone twoToneColor="#117EFF" />} suffix={`/ 209`} />
-                </Card>
-            </Col>
-            <Col xs={24} sm={24} md={24}>
-                <Row gutter={[16, 16]}>
-                    <Col xs={24} sm={24} md={12}>
-                        <Card bordered >
-                            <div style={{ minHeight: "400px" }}>
+             </Col>
+         </Row>
+     )
+ }
 
-                            </div>
-                        </Card>
-                    </Col>
-                    <Col xs={24} sm={24} md={12}>
-                        <Card bordered>
-                            <Tabs defaultActiveKey="1">
-                                <TabPane tab="Commits" key="1">
-                                    <ListItem messages={messages} />
-                                </TabPane>
-                                <TabPane tab="Meeting" key="2">
-                                    <ListItem messages={messages} />
-                                </TabPane>
-                                <TabPane tab="Bug Fixed" key="3">
-                                    <ListItem messages={messages} />
-                                </TabPane>
-                            </Tabs>
-                        </Card>
-                    </Col>
-                </Row>
-            </Col>
-        </Row>
-    )
-}
