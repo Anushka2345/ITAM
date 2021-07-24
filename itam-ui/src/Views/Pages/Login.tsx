@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Form, Input, Button, Checkbox, Card, Image} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom"
-import Logo from "../../assets/antd.png"
+import Logo from "../../assets/logo.png"
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import axios from 'axios';
 
@@ -23,12 +23,12 @@ export default function Login(props: any) {
     }
 
     return (
-    <Card style={{backgroundColor:'#88BDBC',borderColor:'#24305E'}}>
+
         <Card id="auth-card"
         style={{backgroundColor:'#EAE7DC',borderColor:'#24305E'}}>
             <Image
                 className="mb3 mt2"
-                width={100}
+                width={125}
                 src={Logo}
                 preview={false}
             />
@@ -72,12 +72,12 @@ export default function Login(props: any) {
                     </Link>
                 </Form.Item>
                 <Form.Item>
-                    <Button type="primary" style={{background:'#88BDBC' ,borderColor:'#88BDBC'}} htmlType="submit" className="login-form-button">
+                    <Button type="primary"  htmlType="submit" className="login-form-button">
                         Log in
                     </Button>
                 </Form.Item>
             </Form>
         </Card>
-    </Card>
+
     )
 }

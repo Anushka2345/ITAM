@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Input, Button, Checkbox, Card, Image } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom"
-import Logo from "../../assets/antd.png"
+import Logo from "../../assets/logo.png"
 import axios from 'axios';
 import { Layout } from 'antd';
 const { Content } = Layout;
@@ -14,11 +14,11 @@ export default function register() {
     }
 
     return (
-      <Card style={{backgroundColor:'#88BDBC',borderColor:'#24305E'}}>
+
         <Card id="auth-card" style={{backgroundColor:'#EAE7DC', borderColor:'#24305E'}}>
             <Image
                 className="mb3 mt2"
-                width={100}
+                width={125}
                 src={Logo}
                 preview={false}
             />
@@ -88,18 +88,17 @@ export default function register() {
 
                 <Form.Item className="mt2">
                   <Form.Item noStyle>
-                    <Button type="primary" style={{background:'#88BDBC', borderColor:'#88BDBC'}} htmlType="submit" className="login-form-button">
+                    <Button type="primary" htmlType="submit" className="login-form-button">
                         Sign Up
                     </Button>
                    </Form.Item>
 
                     <Link className="login-form-forgot" to="/auth/login"
                     style={{textAlign:"left",color:'#24305E' }}>
-                      Already have an account?Login.
+                      Already have an account? Login.
                     </Link>
                 </Form.Item>
             </Form>
         </Card>
-       </Card>
         )
 }

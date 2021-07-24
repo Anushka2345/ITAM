@@ -7,7 +7,7 @@ import {
 } from "antd"
 import {Link} from "react-router-dom";
 
-import Logo from "../../assets/antd.png"; 
+import Logo from "../../assets/logo.png";
 import { Grid } from '../Grid/Grid';
 const {Sider} = Layout;
 const { SubMenu } = Menu;
@@ -33,7 +33,7 @@ export default function Sidebar(props: SidebarPropsType) {
         <Sider
             style={{
                 overflow: 'auto',
-                height: '100vh',
+                height: '200vh',
                 position: 'fixed',
                 left: 0,
 

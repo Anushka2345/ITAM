@@ -27,7 +27,7 @@ import Page403 from "./Views/Pages/Page403";
 import Page500 from "./Views/Pages/Page500";
 import Login from "./Views/Pages/Login";
 import register from "./Views/Pages/register";
-import welcome from "./Views/Pages/welcome";
+
 
 const Routes: RouteType[] = [
     // Default 404 Not Found Page

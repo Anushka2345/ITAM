@@ -34,7 +34,7 @@ export default function DYNPage() {
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-                    <Grid name='DETAILS'></Grid>
+
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>

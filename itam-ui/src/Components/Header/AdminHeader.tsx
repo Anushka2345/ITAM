@@ -10,7 +10,7 @@ import {
 } from 'antd';
 export default function AdminHeader(props: AdminHeaderPropsType) {
     return (
-        <PageHeader style={{ textAlign: 'center',backgroundColor:'#88BDBC', zIndex: 1, width: '100%' ,minHeight:'100px' }}
+        <PageHeader style={{ textAlign: 'center',backgroundColor:'white', zIndex: 1, width: '100%' ,minHeight:'100px' }}
         backIcon={props.collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
         className="site-layout-background"
         onBack={props.toggleCollapsed}
