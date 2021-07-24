@@ -83,7 +83,8 @@ def persistDetails(is_initial_scan, root, ip_addr):
                                                         root[ip_addr]['osmatch'][0]['osclass'][0]['osgen'],
                                                         root[ip_addr]['osmatch'][0]['osclass'][0]['type'],
                                                         root[ip_addr]['osmatch'][0]['osclass'][0]['vendor'],
-                                                        ip_addr))
+                                                        ip_addr
+                                                        ))
     detail_session.commit()
 
 def persistTcp(is_initial_scan, root, ip_addr):
@@ -171,5 +172,3 @@ def persistToDb(is_initial_scan=False):
 
 
 schedule.every().day.at("00:00").do(persistToDb)
-
-persistToDb(True)

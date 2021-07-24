@@ -11,7 +11,7 @@ def create_app():
     cors = CORS(app)
     app.config['CORS_HEADERS'] = 'Content-Type'
     app.config['SECRET_KEY'] = 'P2Prdhgi!trfgvc34cfjvjg'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///DB/site.db'
     app.config['SQLALCHEMY_BINDS'] = {
         'DETAILS': 'sqlite:///DB/DETAILS.db',
         'PORT_USED': 'sqlite:///DB/PORT_USED.db',
@@ -27,6 +27,6 @@ def create_app():
         from .auth import auth
         app.register_blueprint(auth.auth)
         from .nmap import api
-        app.register_blueprint(api.nmap)
+        app.register_blueprint(api.api)
     return app
 

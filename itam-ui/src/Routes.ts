@@ -116,7 +116,7 @@ const Routes: RouteType[] = [
         path: "/login",
         name: "Login",
         icon: MinusOutlined,
-        component: welcome,
+        component: Login,
         layout: "/auth",
         isSidemenu: false,
     },

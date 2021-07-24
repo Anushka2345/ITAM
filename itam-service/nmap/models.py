@@ -17,9 +17,17 @@ app.config['SQLALCHEMY_BINDS'] = {
 class PORT_USED(db.Model, UserMixin):
     __bind_key__ = 'PORT_USED'
     id = db.Column(db.Integer, primary_key=True, nullable=False)
-    port_id = db.Column(db.Integer, nullable=True)
-    proto = db.Column(db.String(100), nullable=True)
-    state = db.Column(db.String(100), nullable=True)
+    host = db.Column(db.String(100), nullable=False)
+    scan_date = db.Column(db.String(100), nullable=False)
+    num_probes = db.Column(db.Integer, nullable=False)
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "host": self.host,
+            "scan_date": self.scan_date,
+            "num_probes": self.num_probes
+        }
 
 class TCP(db.Model, UserMixin):
     __bind_key__ = 'TCP'
@@ -36,6 +44,22 @@ class TCP(db.Model, UserMixin):
     state = db.Column(db.String(100), nullable=True)
     version = db.Column(db.String(100), nullable=True)
 
+    def to_json(self):
+        return {
+            "id": self.id,
+            "ip_addr": self.ip_addr,
+            "host": self.host,
+            "port_number": self.port_number,
+            "conf": self.conf,
+            "cpe": self.cpe,
+            "extrainfo": self.extrainfo,
+            "name": self.name,
+            "product": self.product,
+            "reason": self.reason,
+            "state": self.state,
+            "version": self.version
+        }
+
 class UDP(db.Model, UserMixin):
     __bind_key__ = 'UDP'
     id = db.Column(db.Integer, primary_key=True, nullable=False)
@@ -50,6 +74,22 @@ class UDP(db.Model, UserMixin):
     reason = db.Column(db.String(100), nullable=True)
     state = db.Column(db.String(100), nullable=True)
     version = db.Column(db.String(100), nullable=True)
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "ip_addr": self.ip_addr,
+            "host": self.host,
+            "port_number": self.port_number,
+            "conf": self.conf,
+            "cpe": self.cpe,
+            "extrainfo": self.extrainfo,
+            "name": self.name,
+            "product": self.product,
+            "reason": self.reason,
+            "state": self.state,
+            "version": self.version
+        }
 
 class DETAILS(db.Model, UserMixin):
     __bind_key__ = 'DETAILS'
@@ -66,3 +106,20 @@ class DETAILS(db.Model, UserMixin):
     os_gen = db.Column(db.String(100), nullable=True)
     os_type = db.Column(db.String(100), nullable=True)
     vendor = db.Column(db.String(100), nullable=True)
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "host": self.host,
+            "name": self.name,
+            "type": self.type,
+            "reason": self.reason,
+            "state": self.state,
+            "os_accuracy": self.os_accuracy,
+            "os_line": self.os_line,
+            "os_name": self.os_name,
+            "os_family": self.os_family,
+            "os_gen": self.os_gen,
+            "os_type": self.os_type,
+            "vendor": self.vendor
+        }

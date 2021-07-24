@@ -8,6 +8,7 @@ import {
 import {Link} from "react-router-dom";
 
 import Logo from "../../assets/antd.png"; 
+import { Grid } from '../Grid/Grid';
 const {Sider} = Layout;
 const { SubMenu } = Menu;
 
@@ -15,25 +16,13 @@ const { SubMenu } = Menu;
 export default function Sidebar(props: SidebarPropsType) {
     const createLinks = () => {
         return props.routes.map((prop, key) => {
-            if (prop.subMenu) {
-                return (
-                    <SubMenu key={key} icon={<prop.icon/>} title={prop.name}>
-                        {prop.subMenu.map((route, routeKey) => (
-                            <Menu.Item key={`${key}${routeKey}`} icon={<route.icon />}>
-                                <Link to={route.layout + route.path}>
-                                    {route.name}
-                                </Link>
-                            </Menu.Item>
-                        ))}
-                    </SubMenu>
-                )
-            } 
             if (prop.isSidemenu) {
                 return (
                     <Menu.Item key={key} icon={<prop.icon />}>
                         <Link to={prop.layout + prop.path}>
                             {prop.name}
                         </Link>
+                        
                     </Menu.Item>
                 )
             }
