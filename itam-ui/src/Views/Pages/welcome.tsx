@@ -1,7 +1,9 @@
 import React from 'react'
 import moment from "moment";
 import Register from "./register";
-
+import {
+    PageHeader
+} from 'antd';
 
 import {
     Card,
@@ -20,42 +22,29 @@ import {
     CalendarTwoTone,
     BugTwoTone,
 } from "@ant-design/icons"
-
+import { Layout } from 'antd';
+const { Content } = Layout;
 const { TabPane } = Tabs;
 const { Title, Text, Link } = Typography;
 
 export default function welcome() {
 
-    return (
-             <Col span={24}>
-                 <Card style={{minHeight:"550px",backgroundColor:'#EAE7DC', borderColor:'#3303C6C'}} bordered>
-                     <Title level={3}></Title>
-                     <Row gutter={[16,16]}>
-                     <Row gutter={[16,16]}>
-                        <Col xs={14} sm={14} md={24} >
-                         <Card style={{minHeight:"300px", minWidth:"300px",backgroundColor:'#88BDBC'}} bordered>
-                         </Card>
-                       </Col>
-                       <Col xs={24} sm={24} md={12}>
-                           <Card style={{minHeight:"200px", minWidth:"300px", backgroundColor:'#E98074'}} bordered>
+    return ( <React.Fragment>
+                <Layout style={{height:'100vh'}}>
+                 <PageHeader style={{ textAlign: 'center',backgroundColor:'#88BDBC', zIndex: 1, width: '100%' ,minHeight:'5%' }}>
+                 P2P SIGN UP
+      </PageHeader>
+      <Content style={{ margin: '0 0 0', overflow: 'initial',backgroundColor:'#EAE7DC',height:'100vh'}}>
 
+                            <Card style={{ backgroundColor:'#EAE7DC',borderColor:'#EAE7DC', minHeight: '100%',minWidth: '60%' }}>
+                             <Register
+                              />
                             </Card>
-                       </Col>
-                       <Col xs={24} sm={24} md={12}>
-                           <Card style={{minHeight:"200px",backgroundColor:'#FBE8A6'}} bordered>
 
-                            </Card>
-                       </Col>
-                     </Row>
-                     <Col span={9} offset={1}
-                     >
-                  <Register />
-                  </Col>
-                  </Row>
-                 </Card>
-             </Col>
+                        </Content>
 
+                    </Layout>
 
-
-     )
+            </React.Fragment>
+        )
  }

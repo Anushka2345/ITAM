@@ -23,7 +23,7 @@ export default function Login(props: any) {
     }
 
     return (
-    <Card style={{backgroundColor:'#88BDBC'}}>
+    <Card style={{backgroundColor:'#88BDBC',borderColor:'#24305E'}}>
         <Card id="auth-card"
         style={{backgroundColor:'#EAE7DC',borderColor:'#24305E'}}>
             <Image

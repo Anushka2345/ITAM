@@ -4,7 +4,8 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom"
 import Logo from "../../assets/antd.png"
 import axios from 'axios';
-
+import { Layout } from 'antd';
+const { Content } = Layout;
 export default function register() {
 
     async function onFinish(values: any)  {
@@ -13,14 +14,20 @@ export default function register() {
     }
 
     return (
+      <Card style={{backgroundColor:'#88BDBC',borderColor:'#24305E'}}>
         <Card id="auth-card" style={{backgroundColor:'#EAE7DC', borderColor:'#24305E'}}>
-
+            <Image
+                className="mb3 mt2"
+                width={100}
+                src={Logo}
+                preview={false}
+            />
             <Form
                 name="normal_login"
                 className="auth-form"
                 initialValues={{ remember: true }}
                 onFinish={(values) => onFinish(values)}
-                style={{backgroundColor:'#EAE7DC'}}
+                style={{backgroundColor:'#EAE7DC',borderColor:'#24305E'}}
 
 
             >
@@ -93,5 +100,6 @@ export default function register() {
                 </Form.Item>
             </Form>
         </Card>
-    )
+       </Card>
+        )
 }

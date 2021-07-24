@@ -16,9 +16,11 @@ export default function AdminHeader(props: AdminHeaderPropsType) {
         onBack={props.toggleCollapsed}
         title={props.currentRouteText}>
         <Menu style={{ textAlign: 'center', zIndex: 1, width: '100%'}} mode="horizontal" defaultSelectedKeys={['1']} theme='dark'>
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
+        <Menu.Item key="1">Home</Menu.Item>
+        <Menu.Item key="2">Page 1</Menu.Item>
+        <Menu.Item key="3">Page 2</Menu.Item>
+        <Menu.Item key="4">Page 3</Menu.Item>
+        <Menu.Item key="5">Page 4</Menu.Item>
       </Menu>
       </PageHeader>
 

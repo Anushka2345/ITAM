@@ -30,7 +30,7 @@ export default function About() {
     const treeData = [
         {
             title: 'assets',
-            
+
             key: 'assets',
             desc: "For storing all assets such as image or styles",
             children: [
@@ -40,12 +40,12 @@ export default function About() {
         },
         {
             title: 'Components',
-            
+
             key: 'Components',
             desc: "You can store all component for Views in this directory",
             children: [
-                { 
-                    title: 'Footer', key: 'Footer', isLeaf: false,  desc: "Folder where you store components for footer", 
+                {
+                    title: 'Footer', key: 'Footer', isLeaf: false,  desc: "Folder where you store components for footer",
                     children: [
                         { title: 'AdminFooter.tsx', key: 'AdminFooter.tsx', isLeaf: true, desc: "Footer for Admin Layout."}
                     ]
@@ -69,7 +69,7 @@ export default function About() {
         },
         {
             title: 'Layouts',
-            
+
             key: 'Layouts',
             desc: "This admin dashboard has two layouts, first is for authentication such as login and the second one is for the admin itself. You can check it in index.tsx",
             children: [
@@ -79,28 +79,28 @@ export default function About() {
         },
         {
             title: 'index.tsx',
-            
+
             key: 'index.tsx',
             desc: "Main file of React",
             isLeaf: true
         },
         {
             title: 'Models.tsx',
-            
+
             key: 'Models.tsx',
             desc: "This file is used for storing Interfaces or Types of components such as component's props or state.",
             isLeaf: true
         },
         {
             title: 'react-app-env.d.ts',
-            
+
             key: 'react-app-env.d.ts',
             desc: "Default react typescript env file. You can delete it if you want to.",
             isLeaf: true
         },
         {
             title: 'Routes.ts',
-            
+
             key: 'Routes.ts',
             desc: "All available route must be declare inside this file and inside variable routes.",
             isLeaf: true
@@ -115,7 +115,7 @@ export default function About() {
         console.log('Trigger Expand');
     };
     return (
-         <Col span={24}>
+             <Col span={24}>
         <Row gutter={[16, 16]}>
             <Col span={24}>
             </Col>
@@ -133,3 +133,4 @@ export default function About() {
                 </Col>
     )
 }
+

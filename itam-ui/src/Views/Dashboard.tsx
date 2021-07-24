@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from "moment";
-import Register from "./Pages/register"
+
 import { 
     Card, 
     Col, 
