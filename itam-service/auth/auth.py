@@ -1,9 +1,7 @@
 from flask import Blueprint
 from flask import request
 from flask_cors import cross_origin
-
 from .model import User
-
 from ..__init__ import db
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
@@ -28,9 +26,7 @@ def login():
     resp = request.json
     user = User.query.filter_by(username=resp['username']).first()
     if not user or not check_password_hash(user.password, resp['password']):
-
         return "Enter valid username or password", 403
-
     login_user(user, remember=resp['remember'])
     return "Login Successful", 200
 
