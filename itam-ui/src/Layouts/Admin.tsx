@@ -75,16 +75,19 @@ export default class AdminLayout extends Component<RouteComponentProps> {
         return (
             <React.Fragment>
                 <Layout>
-                    <Sidebar collapsed={collapsed} routes={Routes} />
+
+                   <Sidebar collapsed={collapsed} routes={Routes} />
                     <Layout className="site-layout" style={{ marginLeft: collapsed ? 0 : 200 }}>
                         <AdminHeader currentRouteText={this.getCurrentRouteText(this.props.location.pathname, Routes)} collapsed={collapsed} routes={Routes} toggleCollapsed={this.toggleCollapsed} />
-                        <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-                            <div style={{ padding: 24, minHeight: 360 }}>
+                        <Content style={{ margin: '0 0 0', overflow: 'initial' }}>
+                            <div style={{ padding: 24, minHeight: 360,backgroundColor:'#EAE7DC' }}>
                                 <Switch>{this.getRoutes(Routes)}</Switch>
+
                             </div>
                         </Content>
                         <AdminFooter />
                     </Layout>
+
                 </Layout>
             </React.Fragment>
         )

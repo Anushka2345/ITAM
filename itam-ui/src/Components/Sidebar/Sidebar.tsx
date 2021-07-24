@@ -47,13 +47,14 @@ export default function Sidebar(props: SidebarPropsType) {
                 height: '100vh',
                 position: 'fixed',
                 left: 0,
+
             }}
             breakpoint="sm"
             collapsedWidth="0"
             collapsible
             collapsed={props.collapsed}
             trigger={null}
-            theme="light"
+            theme='dark'
         >
             <Image
                 className={props.collapsed ? "ml2 my2" : "ml3 pl2 my2"}
@@ -64,7 +65,7 @@ export default function Sidebar(props: SidebarPropsType) {
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
                 mode="inline"
-                theme="light"
+                theme = 'dark'
             >
                 {createLinks()}
             </Menu>

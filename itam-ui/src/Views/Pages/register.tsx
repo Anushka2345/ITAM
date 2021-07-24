@@ -13,18 +13,15 @@ export default function register() {
     }
 
     return (
-        <Card id="auth-card">
-            <Image
-                className="mb3 mt2"
-                width={100}
-                src={Logo}
-                preview={false}
-            />
+        <Card id="auth-card" style={{backgroundColor:'#EAE7DC', borderColor:'#24305E'}}>
+
             <Form
                 name="normal_login"
                 className="auth-form"
                 initialValues={{ remember: true }}
                 onFinish={(values) => onFinish(values)}
+                style={{backgroundColor:'#EAE7DC'}}
+
 
             >
 
@@ -82,10 +79,17 @@ export default function register() {
                     />
                 </Form.Item>
 
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
+                <Form.Item className="mt2">
+                  <Form.Item noStyle>
+                    <Button type="primary" style={{background:'#88BDBC' ,borderColor:'#88BDBC'}} htmlType="submit" className="login-form-button">
                         Sign Up
                     </Button>
+                   </Form.Item>
+
+                    <Link className="login-form-forgot" to="/auth/login"
+                    style={{textAlign:"left",color:'#24305E' }}>
+                      Already have an account?Login.
+                    </Link>
                 </Form.Item>
             </Form>
         </Card>
