@@ -81,7 +81,7 @@ export default function register() {
 
                 <Form.Item className="mt2">
                   <Form.Item noStyle>
-                    <Button type="primary" style={{background:'#88BDBC' ,borderColor:'#88BDBC'}} htmlType="submit" className="login-form-button">
+                    <Button type="primary" style={{background:'#88BDBC', borderColor:'#88BDBC'}} htmlType="submit" className="login-form-button">
                         Sign Up
                     </Button>
                    </Form.Item>

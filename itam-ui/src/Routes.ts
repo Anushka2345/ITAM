@@ -69,6 +69,7 @@ const Routes: RouteType[] = [
                 layout: "/admin",
                 isSidemenu: true,
             },
+
             {
                 path: "/pages/500",
                 name: "500",
@@ -85,6 +86,14 @@ const Routes: RouteType[] = [
                 layout: "/admin",
                 isSidemenu: true,
             },
+            {
+                path: "/pages/login",
+                name: "Login",
+                icon: MinusOutlined,
+                component: welcome,
+                layout: "/auth",
+                isSidemenu: true,
+             },
             {
                 path: "/welcome",
                 name: "Logout",
@@ -104,6 +113,14 @@ const Routes: RouteType[] = [
         isSidemenu: true,
     },
     {
+        path: "/login",
+        name: "Login",
+        icon: MinusOutlined,
+        component: welcome,
+        layout: "/auth",
+        isSidemenu: false,
+    },
+    {
         path: "/welcome",
         name: "Logout",
         icon: MinusOutlined,
@@ -111,6 +128,7 @@ const Routes: RouteType[] = [
         layout: "/auth",
         isSidemenu: false,
     }
+
 ]
 
 export default Routes;
