@@ -15,6 +15,9 @@ import {
 import {RouteType} from "./Models"
 // About
 import About from "./Views/About";
+import page1 from "./Views/page1";
+import page2 from "./Views/page2";
+import Page3 from "./Views/Page3";
 // Dashboard
 import Dashboard from "./Views/Dashboard";
 // Pages
@@ -87,24 +90,48 @@ const Routes: RouteType[] = [
                 isSidemenu: true,
             },
             {
-                path: "/pages/login",
+                path: "/login",
                 name: "Login",
                 icon: MinusOutlined,
-                component: welcome,
+                component: Login,
                 layout: "/auth",
-                isSidemenu: true,
+                isSidemenu: false,
              },
             {
-                path: "/welcome",
+                path: "/register",
                 name: "Logout",
                 icon: MinusOutlined,
-                component: welcome,
+                component: register,
                 layout: "/auth",
                 isSidemenu: false,
             }
         ]
     },
     {
+        path: "/page1",
+        name: "Page1",
+        icon: GithubOutlined,
+        component: page1,
+        layout: "/admin",
+        isSidemenu: true,
+    },
+     {
+        path: "/page2",
+        name: "Page2",
+        icon: GithubOutlined,
+        component: page2,
+        layout: "/admin",
+        isSidemenu: true,
+    },
+     {
+        path: "/Page3",
+        name: "Page3",
+        icon: GithubOutlined,
+        component: Page3,
+        layout: "/admin",
+        isSidemenu: true,
+    },
+     {
         path: "/about",
         name: "About",
         icon: GithubOutlined,
@@ -121,10 +148,10 @@ const Routes: RouteType[] = [
         isSidemenu: false,
     },
     {
-        path: "/welcome",
+        path: "/register",
         name: "Logout",
         icon: MinusOutlined,
-        component: welcome,
+        component: register,
         layout: "/auth",
         isSidemenu: false,
     }
