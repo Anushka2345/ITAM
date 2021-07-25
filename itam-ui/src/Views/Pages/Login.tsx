@@ -13,7 +13,7 @@ export default function Login(props: any) {
     function Alert(props: any) {
         return <MuiAlert elevation={6} variant="filled" {...props} />;
       }
-    }
+
 
     async function onFinish(values: any)  {
         const response = await axios.post("http://127.0.0.1:5000/login", values).then(
@@ -33,8 +33,6 @@ export default function Login(props: any) {
                 :error===2?
                     <Redirect from="/auth/login" to="/admin/index" />:<div> </div>}
 
-                 :error===2?
-                   <Redirect from="/auth/login" to="/admin/index" />:<div> </div>}
             <Form
                 name="normal_login"
                 className="auth-form"

@@ -8,7 +8,7 @@ import { Grid } from '../Components/Grid/Grid';
 import { PieChart } from '../Components/Charts/PieChart';
 
 
-export default function About() {
+export default function UDP() {
 
     return (
          <Col span={24}>

@@ -19,7 +19,7 @@ interface OnSelectEvent {
     nativeEvent: MouseEvent;
 }
 
-export default function About() {
+export default function Stats() {
     return (
         <Col span={24}>
         <Row gutter={[16, 16]}>

@@ -12,10 +12,10 @@ import {
 // type for route
 import {RouteType} from "./Models"
 // About
-import About from "./Views/About";
-import page1 from "./Views/page1";
-import page2 from "./Views/page2";
-import Page3 from "./Views/Page3";
+import UDP from './Views/UDP'
+import TCP from './Views/TCP'
+import Stats from "./Views/DeviceStats";
+import HostDetails from "./Views/HostDetails";
 // Dashboard
 import Dashboard from "./Views/Dashboard";
 // Pages
@@ -108,7 +108,7 @@ const Routes: RouteType[] = [
         path: "/devicesDiscovered",
         name: "Daily Scan Devices",
         icon: GithubOutlined,
-        component: page1,
+        component: Stats,
         layout: "/admin",
         isSidemenu: false,
     },
@@ -116,7 +116,7 @@ const Routes: RouteType[] = [
         path: "/hostDetails",
         name: "Host Details",
         icon: GithubOutlined,
-        component: page2,
+        component: HostDetails,
         layout: "/admin",
         isSidemenu: false,
     },
@@ -124,7 +124,7 @@ const Routes: RouteType[] = [
         path: "/tcp",
         name: "TCP Details",
         icon: GithubOutlined,
-        component: Page3,
+        component: TCP,
         layout: "/admin",
         isSidemenu: false,
     },
@@ -132,7 +132,7 @@ const Routes: RouteType[] = [
         path: "/udp",
         name: "UDP Details",
         icon: GithubOutlined,
-        component: About,
+        component: UDP,
         layout: "/admin",
         isSidemenu: false,
     },
