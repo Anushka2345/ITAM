@@ -10,8 +10,8 @@ pip install -r requirements.txt
 We will be relocating to the directory and exporting the flask app.
 ```
 cd ../
-export FLASK_APP=Review-Bay  # GNU/LINUX
-set FLASK_APP=Review-Bay # Windows
+export FLASK_APP=itam-service  # GNU/LINUX
+set FLASK_APP=itam-service # Windows
 ```
 Finally we are all set to run this
 ```
