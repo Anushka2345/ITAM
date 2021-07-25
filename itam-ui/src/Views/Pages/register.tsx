@@ -6,15 +6,13 @@ import Logo from "../../assets/logo.png"
 import axios from 'axios';
 import { Layout } from 'antd';
 const { Content } = Layout;
-export default function register() {
 
+export default function register() {
     async function onFinish(values: any)  {
         const response = await axios.post("http://127.0.0.1:5000/register", values)
         console.log(response)
     }
-
     return (
-
         <Card id="auth-card" style={{backgroundColor:'#EAE7DC', borderColor:'#24305E'}}>
             <Image
                 className="mb3 mt2"
@@ -28,10 +26,7 @@ export default function register() {
                 initialValues={{ remember: true }}
                 onFinish={(values) => onFinish(values)}
                 style={{backgroundColor:'#EAE7DC',borderColor:'#24305E'}}
-
-
             >
-
                 <Form.Item
                     name="email"
                     rules={[{ required: true, message: 'This is a required field' }]}
@@ -50,21 +45,18 @@ export default function register() {
                 >
                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Last Name" />
                 </Form.Item>
-
                 <Form.Item
                     name="username"
                     rules={[{ required: true, message: 'This is a required field' }]}
                 >
                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
                 </Form.Item>
-
                 <Form.Item
                     name="Organisation"
                     rules={[{ required: true, message: 'This is a required field' }]}
                 >
                     <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Organisation" />
                 </Form.Item>
-
                 <Form.Item
                     name="password"
                     rules={[{ required: true, message: 'This is a required field' }]}
@@ -85,14 +77,12 @@ export default function register() {
                         placeholder="Re-enter password"
                     />
                 </Form.Item>
-
                 <Form.Item className="mt2">
                   <Form.Item noStyle>
                     <Button type="primary" htmlType="submit" className="login-form-button">
                         Sign Up
                     </Button>
                    </Form.Item>
-
                     <Link className="login-form-forgot" to="/auth/login"
                     style={{textAlign:"left",color:'#24305E' }}>
                       Already have an account? Login.
@@ -100,5 +90,5 @@ export default function register() {
                 </Form.Item>
             </Form>
         </Card>
-        )
+    )
 }

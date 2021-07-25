@@ -115,6 +115,5 @@ const generateStatsChart: any = async () => {
     for (const [key, value] of Object.entries(returnOject)) {
         ret.push({label:key, value:value})
     }
-    
     return ret
 }

@@ -11,24 +11,19 @@ interface GridProps {
 }
 
 export const Grid = (props: GridProps) => {
-
     const [rowData, setRowData] = useState<any[]>([])
-
     const getData = async () => {
         const results  = await fetchData(props.name)
         setRowData(results.data.result)
         console.log(results)
     }
-
     useEffect(() => {
         getData()
         getPieChartData("TCP")
     }, [])
-   
-    
     return (
         <>
-        <div className='ag-theme-alpine'  style={{height: "100vh", width: "100vw"}}>
+        <div className='ag-theme-alpine'  style={{height: "50vh", width: "80vw"}}>
         <AgGridReact
                 defaultColDef={{
                     sortable: true,
@@ -39,9 +34,9 @@ export const Grid = (props: GridProps) => {
                 }}
                 rowData={rowData}
                 columnDefs={getColumnDefs(props.name)}
-            />
+                onFirstDataRendered={(params)=> params.api.sizeColumnsToFit()}
+        />
         </div>
-            
         </>
     )
 }

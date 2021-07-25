@@ -1,17 +1,12 @@
 import React from 'react'
 import {SidebarPropsType} from "../../Models"
-import {
-    Layout,
-    Image,
-    Menu,
-} from "antd"
+import {Layout,Image,Menu,} from "antd"
 import {Link} from "react-router-dom";
-
 import Logo from "../../assets/logo.png";
 import { Grid } from '../Grid/Grid';
+
 const {Sider} = Layout;
 const { SubMenu } = Menu;
-
 
 export default function Sidebar(props: SidebarPropsType) {
     const createLinks = () => {
@@ -22,7 +17,6 @@ export default function Sidebar(props: SidebarPropsType) {
                         <Link to={prop.layout + prop.path}>
                             {prop.name}
                         </Link>
-                        
                     </Menu.Item>
                 )
             }
@@ -36,7 +30,6 @@ export default function Sidebar(props: SidebarPropsType) {
                 height: '200vh',
                 position: 'fixed',
                 left: 0,
-
             }}
             breakpoint="sm"
             collapsedWidth="0"
@@ -54,7 +47,7 @@ export default function Sidebar(props: SidebarPropsType) {
                 defaultSelectedKeys={['1']}
                 defaultOpenKeys={['sub1']}
                 mode="inline"
-                theme = 'dark'
+                theme='dark'
             >
                 {createLinks()}
             </Menu>

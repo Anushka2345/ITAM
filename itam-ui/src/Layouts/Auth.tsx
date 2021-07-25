@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import {
-    Layout
-} from 'antd';
+import {Layout} from 'antd';
 import { Route, Switch, RouteComponentProps } from "react-router-dom";
 import Routes from "../Routes";
 import AdminFooter from "../Components/Footer/AdminFooter"
 import { RouteType } from '../Models';
+
 const { Content } = Layout;
 
 export default class AuthLayout extends Component<RouteComponentProps> {

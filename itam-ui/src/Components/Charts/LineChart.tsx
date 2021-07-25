@@ -10,19 +10,15 @@ interface LineChartProps {
 }
 
 export const LineChart = (props: LineChartProps) => {
-
     const [data, setData] = useState<any>([])
-
     const getData = async () => {
         const dat: any = await getPieChartData(props.name)
         setData(dat)
         
     }
-
     useEffect (() => {
         getData()
     }, [])
-
     const state = {
         options: {
           autoSize: true,
@@ -37,10 +33,6 @@ export const LineChart = (props: LineChartProps) => {
           ],
         },
       };
-    
-
-  
-
       return (
           <>
           <AgChartsReact options={state.options} />

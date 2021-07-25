@@ -10,20 +10,15 @@ interface PieChartProps {
 }
 
 export const PieChart = (props: PieChartProps) => {
-
     const [data, setData] = useState<any>([])
-
     const getData = async () => {
         const dat: any = await getPieChartData(props.name)
         console.log("pie",dat)
         setData(dat)
-        
     }
-
     useEffect (() => {
         getData()
     }, [])
-
     const state = {
         options: {
           autoSize: true,
@@ -44,7 +39,6 @@ export const PieChart = (props: PieChartProps) => {
           legend: { enabled: true },
         },
     };
-
       return (
           <>
           <AgChartsReact options={state.options} />

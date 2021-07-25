@@ -20,6 +20,8 @@ export async function fetchData(name: string) {
 export const getColumnDefs = (name: string) => {
     if (name === "TCP" || name === "UDP") 
         return TCP_defs
+    else if (name === "PORT_USED")
+        return Stats_defs
     else 
         return Detail_defs
 }
@@ -105,4 +107,19 @@ const Detail_defs: ColDef[] = [
         field: 'vendor'
     }
 
+]
+
+const Stats_defs: ColDef[]= [
+    {
+        headerName: 'Host',
+        field: "host"
+    },
+    {
+        headerName: "Scan Date",
+        field: "scan_date"
+    },
+    {
+        headerName: "Number of probes",
+        field: "num_probes"
+    }
 ]

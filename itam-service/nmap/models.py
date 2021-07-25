@@ -14,6 +14,7 @@ app.config['SQLALCHEMY_BINDS'] = {
     "UDP": 'sqlite:///../DB/UDP.db'
 }
 
+
 class PORT_USED(db.Model, UserMixin):
     __bind_key__ = 'PORT_USED'
     id = db.Column(db.Integer, primary_key=True, nullable=False)
@@ -28,6 +29,7 @@ class PORT_USED(db.Model, UserMixin):
             "scan_date": self.scan_date,
             "num_probes": self.num_probes
         }
+
 
 class TCP(db.Model, UserMixin):
     __bind_key__ = 'TCP'
@@ -60,6 +62,7 @@ class TCP(db.Model, UserMixin):
             "version": self.version
         }
 
+
 class UDP(db.Model, UserMixin):
     __bind_key__ = 'UDP'
     id = db.Column(db.Integer, primary_key=True, nullable=False)
@@ -90,6 +93,7 @@ class UDP(db.Model, UserMixin):
             "state": self.state,
             "version": self.version
         }
+
 
 class DETAILS(db.Model, UserMixin):
     __bind_key__ = 'DETAILS'

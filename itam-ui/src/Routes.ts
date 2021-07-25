@@ -3,8 +3,6 @@
     Use @ant-design/icons for the icon in sidebar.
     You can change the code in Sidebar.tsx
 */
-
-
 import {
     AppstoreOutlined,
     MinusOutlined,
@@ -21,7 +19,6 @@ import Page3 from "./Views/Page3";
 // Dashboard
 import Dashboard from "./Views/Dashboard";
 // Pages
-import BlankPage from "./Views/Pages/BlankPage";
 import Page404 from "./Views/Pages/Page404";
 import Page403 from "./Views/Pages/Page403";
 import Page500 from "./Views/Pages/Page500";
@@ -31,7 +28,7 @@ import register from "./Views/Pages/register";
 
 const Routes: RouteType[] = [
     // Default 404 Not Found Page
-    
+
     {
         path: "/error/404",
         name: "Dashboard",
@@ -49,21 +46,21 @@ const Routes: RouteType[] = [
         isSidemenu: true,
     },
     {
+        path: "/profile",
+        name: "Profile",
+        icon: AppstoreOutlined,
+        component: Dashboard,
+        layout: "/admin",
+        isSidemenu: true,
+    },
+    {
         path: "/pages",
         name: "Pages",
         icon: FileOutlined,
         component: Dashboard,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
         subMenu: [
-            {
-                path: "/pages/blank",
-                name: "Blank Page",
-                icon: MinusOutlined,
-                component: BlankPage,
-                layout: "/admin",
-                isSidemenu: true,
-            },
             {
                 path: "/pages/404",
                 name: "404",
@@ -96,48 +93,48 @@ const Routes: RouteType[] = [
                 component: Login,
                 layout: "/auth",
                 isSidemenu: false,
-             },
+            },
             {
-                path: "/register",
+                path: "/login",
                 name: "Logout",
                 icon: MinusOutlined,
-                component: register,
+                component: Login,
                 layout: "/auth",
                 isSidemenu: false,
             }
         ]
     },
     {
-        path: "/page1",
-        name: "Page1",
+        path: "/devicesDiscovered",
+        name: "Daily Scan Devices",
         icon: GithubOutlined,
         component: page1,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
-     {
-        path: "/page2",
-        name: "Page2",
+    {
+        path: "/hostDetails",
+        name: "Host Details",
         icon: GithubOutlined,
         component: page2,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
-     {
-        path: "/Page3",
-        name: "Page3",
+    {
+        path: "/tcp",
+        name: "TCP Details",
         icon: GithubOutlined,
         component: Page3,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
-     {
-        path: "/about",
-        name: "About",
+    {
+        path: "/udp",
+        name: "UDP Details",
         icon: GithubOutlined,
         component: About,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
     {
         path: "/login",
@@ -149,13 +146,21 @@ const Routes: RouteType[] = [
     },
     {
         path: "/register",
-        name: "Logout",
+        name: "Register",
         icon: MinusOutlined,
         component: register,
         layout: "/auth",
         isSidemenu: false,
-    }
-
+    },
+    {
+        path: "/login",
+        name: "Logout",
+        icon: MinusOutlined,
+        component: Login,
+        layout: "/auth",
+        isSidemenu: true,
+    },
 ]
 
+// @ts-ignore
 export default Routes;

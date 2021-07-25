@@ -6,24 +6,18 @@ import {Link} from "react-router-dom"
 import Logo from "../../assets/logo.png"
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import axios from 'axios';
-
 import MuiAlert from '@material-ui/lab/Alert';
 
 export default function Login(props: any) {
-
     const [error, setError] = useState(0)
-
     function Alert(props: any) {
         return <MuiAlert elevation={6} variant="filled" {...props} />;
       }
-
     async function onFinish(values: any)  {
         const response = await axios.post("http://127.0.0.1:5000/login", values).then(
         res => {setError(2)}).catch(e => setError(1))
     }
-
     return (
-
         <Card id="auth-card"
         style={{backgroundColor:'#EAE7DC',borderColor:'#24305E'}}>
             <Image
@@ -36,16 +30,13 @@ export default function Login(props: any) {
                 <Alert severity="error" >enter valid username and password</Alert>
                  :error===2?
                    <Redirect from="/auth/login" to="/admin/index" />:<div> </div>}
-
             <Form
                 name="normal_login"
                 className="auth-form"
                 initialValues={{ remember: true }}
                 onFinish={(values) => onFinish(values)}
                 style={{backgroundColor:'#EAE7DC'}}
-
             >
-
                 <Form.Item
                     name="username"
                     rules={[{ required: true, message: 'Enter valid username' }]}
@@ -78,6 +69,5 @@ export default function Login(props: any) {
                 </Form.Item>
             </Form>
         </Card>
-
     )
 }

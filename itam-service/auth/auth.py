@@ -14,7 +14,9 @@ auth = Blueprint('auth', __name__)
 @cross_origin()
 def register():
     resp = request.json
-    newuser = User(email=resp['email'], first_name=resp['Firstname'], last_name=resp['Lastname'], username=resp['username'], organization=resp['Organisation'], password=generate_password_hash(resp['password'], method='sha256'))
+    newuser = User(email=resp['email'], first_name=resp['Firstname'], last_name=resp['Lastname'],
+                   username=resp['username'], organization=resp['Organisation'],
+                   password=generate_password_hash(resp['password'], method='sha256'))
     db.session.add(newuser)
     db.session.commit()
     return "Registration Successful!", 200
@@ -30,7 +32,8 @@ def login():
     login_user(user, remember=resp['remember'])
     return "Login Successful", 200
 
-@auth.route('/logout',methods = ["GET", "POST"])
+
+@auth.route('/logout', methods=["GET", "POST"])
 @cross_origin()
 @login_required
 def logout():

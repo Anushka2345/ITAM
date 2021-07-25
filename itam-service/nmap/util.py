@@ -172,5 +172,3 @@ def persistToDb(is_initial_scan=False):
 
 
 schedule.every().day.at("00:00").do(persistToDb)
-
-

@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import { 
-    Layout
-} from 'antd';
+import { Layout} from 'antd';
 import { Route, Switch, RouteComponentProps, Redirect } from "react-router-dom";
 import Routes from "../Routes";
 import AdminHeader from "../Components/Header/AdminHeader"
 import AdminFooter from "../Components/Footer/AdminFooter"
 import Sidebar from "../Components/Sidebar/Sidebar"
 import { RouteType } from '../Models';
+
 const { Content } = Layout;
 
 export default class AdminLayout extends Component<RouteComponentProps> {
@@ -82,12 +81,10 @@ export default class AdminLayout extends Component<RouteComponentProps> {
                         <Content style={{ margin: '0 0 0', overflow: 'initial' }}>
                             <div style={{ padding: 24, minHeight: 360,backgroundColor:'#EAE7DC' }}>
                                 <Switch>{this.getRoutes(Routes)}</Switch>
-
                             </div>
                         </Content>
                         <AdminFooter />
                     </Layout>
-
                 </Layout>
             </React.Fragment>
         )

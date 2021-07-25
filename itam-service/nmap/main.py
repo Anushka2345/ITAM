@@ -1,8 +1,6 @@
 import nmap
 import sys
 
-
-
 nmap_path = r"C:\Program Files (x86)\Nmap\nmap.exe"
 sys.path.append(nmap_path)
 scanner = nmap.PortScanner()
@@ -30,7 +28,7 @@ if response == '1':
     # state() tells if target is up or down
     print("Ip Status: ", scanner[ip_addr].state())
     # all_protocols() tells which protocols are enabled like TCP UDP etc
-    print("protocols:",scanner[ip_addr].all_protocols())
+    print("protocols:", scanner[ip_addr].all_protocols())
     print("Open Ports: ", scanner[ip_addr])
      
 # If user's input is 2, perform a UDP Scan   
@@ -44,7 +42,7 @@ elif response == '2':
     # state() tells if target is up or down
     print("Ip Status: ", scanner[ip_addr].state())
     # all_protocols() tells which protocols are enabled like TCP UDP etc
-    print("protocols:",scanner[ip_addr].all_protocols())
+    print("protocols:", scanner[ip_addr].all_protocols())
     print("Open Ports: ", scanner[ip_addr]['udp'].keys())
      
 # If user's input is 3, perform a Comprehensive scan
@@ -76,12 +74,12 @@ elif response == '6':
     # Here, v is used for verbose, which means if selected it will give extra information
     # 1-1024 means the port number we want to search on
     #-sS means perform a TCP SYN connect scan, it send the SYN packets to the host
-    scanner.scan(ip_addr,'1-1024', '-v -sS')
+    scanner.scan(ip_addr, '1-1024', '-v -sS')
     print(scanner.scaninfo())
     # state() tells if target is up or down
     print("Ip Status: ", scanner[ip_addr].state())
     # all_protocols() tells which protocols are enabled like TCP UDP etc
-    print("protocols:",scanner[ip_addr].all_protocols())
+    print("protocols:", scanner[ip_addr].all_protocols())
     print("Open Ports: ", scanner[ip_addr]['tcp'].keys())
      
 elif response == '7': 
