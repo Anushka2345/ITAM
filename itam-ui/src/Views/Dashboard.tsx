@@ -19,9 +19,10 @@ import {
     BugTwoTone,
 } from "@ant-design/icons"
 import { Grid } from '../Components/Grid/Grid';
+import { LineChart } from '../Components/Charts/LineChart';
+import { PieChart } from '../Components/Charts/PieChart';
+import {Link} from "react-router-dom";
 
-const { TabPane } = Tabs;
-const { Title, Text, Link } = Typography;
 
 
 export default function DYNPage() {
@@ -34,22 +35,26 @@ export default function DYNPage() {
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-                    <Grid name='DETAILS'></Grid>
+                <Link to="/admin/devicesDiscovered"><LineChart name="PORT_USED" title="Devices"/></Link>
+                    
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-
+                <Link to="/admin/hostDetails"><PieChart name='DETAILS' title="OS Types"/></Link>
+                    
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-
+                <Link to="/admin/tcp"><PieChart name="TCP" title="TCP Ports"/></Link>
+                    
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-
+                <Link to="/admin/udp"><PieChart name="UDP" title="UDP Ports"/></Link>
+                    
                 </Card>
             </Col>
         </Row>

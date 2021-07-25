@@ -27,7 +27,6 @@ import Page403 from "./Views/Pages/Page403";
 import Page500 from "./Views/Pages/Page500";
 import Login from "./Views/Pages/Login";
 import register from "./Views/Pages/register";
-import welcome from "./Views/Pages/welcome";
 
 const Routes: RouteType[] = [
     // Default 404 Not Found Page
@@ -49,12 +48,20 @@ const Routes: RouteType[] = [
         isSidemenu: true,
     },
     {
+        path: "/profile",
+        name: "Profile",
+        icon: AppstoreOutlined,
+        component: Dashboard,
+        layout: "/admin",
+        isSidemenu: true,
+    },
+    {
         path: "/pages",
         name: "Pages",
         icon: FileOutlined,
         component: Dashboard,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
         subMenu: [
             {
                 path: "/pages/blank",
@@ -98,46 +105,46 @@ const Routes: RouteType[] = [
                 isSidemenu: false,
              },
             {
-                path: "/register",
+                path: "/login",
                 name: "Logout",
                 icon: MinusOutlined,
-                component: register,
+                component: Login,
                 layout: "/auth",
                 isSidemenu: false,
             }
         ]
     },
     {
-        path: "/page1",
-        name: "Page1",
+        path: "/devicesDiscovered",
+        name: "Daily Scan Devices",
         icon: GithubOutlined,
         component: page1,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
      {
-        path: "/page2",
-        name: "Page2",
+        path: "/hostDetails",
+        name: "Host Details",
         icon: GithubOutlined,
         component: page2,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
      {
-        path: "/Page3",
-        name: "Page3",
+        path: "/tcp",
+        name: "TCP Details",
         icon: GithubOutlined,
         component: Page3,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
      {
-        path: "/about",
-        name: "About",
+        path: "/udp",
+        name: "UDP Details",
         icon: GithubOutlined,
         component: About,
         layout: "/admin",
-        isSidemenu: true,
+        isSidemenu: false,
     },
     {
         path: "/login",
@@ -149,12 +156,21 @@ const Routes: RouteType[] = [
     },
     {
         path: "/register",
-        name: "Logout",
+        name: "Register",
         icon: MinusOutlined,
         component: register,
         layout: "/auth",
         isSidemenu: false,
-    }
+    },
+    {
+        path: "/login",
+        name: "Logout",
+        icon: MinusOutlined,
+        component: Login,
+        layout: "/auth",
+        isSidemenu: true,
+    },
+
 
 ]
 

@@ -28,7 +28,7 @@ export const Grid = (props: GridProps) => {
     
     return (
         <>
-        <div className='ag-theme-alpine'  style={{height: "100vh", width: "100vw"}}>
+        <div className='ag-theme-alpine'  style={{height: "50vh", width: "80vw"}}>
         <AgGridReact
                 defaultColDef={{
                     sortable: true,
@@ -39,6 +39,7 @@ export const Grid = (props: GridProps) => {
                 }}
                 rowData={rowData}
                 columnDefs={getColumnDefs(props.name)}
+                onFirstDataRendered={(params)=> params.api.sizeColumnsToFit()}
             />
         </div>
             

@@ -17,6 +17,7 @@ export interface SidebarPropsType {
     collapsed: boolean;
     routes: RouteType[];
 }
+
 // Admin Header Props
 export interface AdminHeaderPropsType extends SidebarPropsType {
     toggleCollapsed: () => void;
