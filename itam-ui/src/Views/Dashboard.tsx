@@ -25,38 +25,28 @@ const { Title, Text, Link } = Typography;
 
 
 export default function DYNPage() {
-
     return (
-
      <Col span={24}>
         <Row gutter={[16, 16]}>
             <Col span={24}>
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
-
                 </Card>
             </Col>
         </Row>
-
         </Col>
-
-
-
     )
 }
