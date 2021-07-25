@@ -175,4 +175,5 @@ const Routes: RouteType[] = [
 
 ]
 
+// @ts-ignore
 export default Routes;
