@@ -10,6 +10,7 @@ const { Content } = Layout;
 export default function register() {
     async function onFinish(values: any)  {
         const response = await axios.post("http://127.0.0.1:5000/register", values)
+        document.location.href = '/auth/continueRegistration';
         console.log(response)
     }
     return (

@@ -33,7 +33,12 @@ export default function AdminHeader(props: AdminHeaderPropsType) {
         <Menu.Item key="5">
             <Link to="/admin/udp">UDP Details</Link>
         </Menu.Item>
-        </Menu>
-        </PageHeader>
+            <Menu.Item key="6">
+                <a href="https://www.shodan.io/host/157.48.202.2">IP Details</a>
+            </Menu.Item>
+
+      </Menu>
+      </PageHeader>
+
     )
 }

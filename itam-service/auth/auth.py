@@ -3,11 +3,16 @@ from flask import request
 from flask_cors import cross_origin
 from .model import User
 from ..__init__ import db
+from ..nmap import util
 from werkzeug.security import generate_password_hash
 from werkzeug.security import check_password_hash
 from flask_login import login_user, logout_user, login_required
+from ..mail import Mail
 
 auth = Blueprint('auth', __name__)
+
+email=""
+name=""
 
 
 @auth.route('/register', methods=["GET", "POST"])
@@ -19,6 +24,8 @@ def register():
                    password=generate_password_hash(resp['password'], method='sha256'))
     db.session.add(newuser)
     db.session.commit()
+    email = resp['email']
+    name = resp['Firstname'] + resp['Lastname']
     return "Registration Successful!", 200
 
 
@@ -34,6 +41,17 @@ def login():
 
 
 @auth.route('/logout', methods=["GET", "POST"])
+@auth.route('/onboardUser', methods=['GET', 'POST'])
+@cross_origin()
+def onboard_user():
+    #resp = request.json
+    #ipaddr = resp['host'] + resp['subnet_mask']
+    #util.persistToDb(is_initial_scan=False, hosts=ipaddr) # Commented for DEMO
+    Mail(email, name)
+    return "success", 200
+
+
+@auth.route('/logout',methods = ["GET", "POST"])
 @cross_origin()
 @login_required
 def logout():

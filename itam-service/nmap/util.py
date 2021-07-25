@@ -25,12 +25,6 @@ nmap_profiles = {
     "Intense scan, all TCP ports":[{"-T":[4,0,1,2,3,5],"ip":""},"-p 1-65535 -T{0} -A -v {1}"],
     "Intense scan, no ping":[{"-T":[4,0,1,2,3,5],"ip":""},"-T{0} -A -v -Pn {1}"],
     "Ping scan":[{"-T":[4,0,1,2,3,5],"ip":""},"-sn {1}"],
-    "Quick scan":[{"-T":[4,0,1,2,3,5],"ip":""},"-T{0} -F {1}"],
-    "Quick scan plus":[{"-T":[4,0,1,2,3,5],"ip":""},"-sV -T{0} -O -F -version-light {1}"],
-    "Quick traceroute":[{"ip":""},"-sn -traceroute {0}"],
-    "Regular scan":[{"ip":""},"{0}"],
-    'Quick traceroute': [{'ip': ''}, '-sn -traceroute {0}'],
-    'Regular scan': [{'ip': ''}, '{0}'],
     'slow_comprehensive_scan': '-sS -O -sU -T4 -A -v -PE -PP -PS80,443 -PA3389 -PU40125 -PY -g 53',
     }
 
@@ -162,8 +156,12 @@ def persistUdp(is_initial_scan, root, ip_addr):
                                         ))
         udp_session.commit()
 
-def persistToDb(is_initial_scan=False):
-    root = performScan(ip_addr='127.0.0.1')['scan']
+def persistToDb(is_initial_scan=False, hosts="", ip_addr=""):
+    root=None
+    if (hosts == ""):
+        root = performScan(hosts=hosts)['scan']
+    else:
+        root = performScan(ip_addr=ip_addr)['scan']
     print(root)
     for ip_addr in root.keys():
         persistDetails(is_initial_scan, root, ip_addr)

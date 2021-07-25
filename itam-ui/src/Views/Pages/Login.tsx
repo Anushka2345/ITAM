@@ -13,13 +13,15 @@ export default function Login(props: any) {
     function Alert(props: any) {
         return <MuiAlert elevation={6} variant="filled" {...props} />;
       }
+    }
+
     async function onFinish(values: any)  {
         const response = await axios.post("http://127.0.0.1:5000/login", values).then(
-        res => {setError(2)}).catch(e => setError(1))
+            res => {setError(2)}).catch(e => setError(1))
     }
     return (
         <Card id="auth-card"
-        style={{backgroundColor:'#EAE7DC',borderColor:'#24305E'}}>
+              style={{backgroundColor:'#EAE7DC',borderColor:'#24305E'}}>
             <Image
                 className="mb3 mt2"
                 width={125}
@@ -28,6 +30,9 @@ export default function Login(props: any) {
             />
             {error===1?
                 <Alert severity="error" >enter valid username and password</Alert>
+                :error===2?
+                    <Redirect from="/auth/login" to="/admin/index" />:<div> </div>}
+
                  :error===2?
                    <Redirect from="/auth/login" to="/admin/index" />:<div> </div>}
             <Form
@@ -58,7 +63,7 @@ export default function Login(props: any) {
                         <Checkbox>Remember me</Checkbox>
                     </Form.Item>
                     <Link className="login-form-forgot" to="/auth/login"
-                    style={{textAlign:"left",color:'BLACK' }}>
+                          style={{textAlign:"left",color:'BLACK' }}>
                         Forgot password
                     </Link>
                 </Form.Item>

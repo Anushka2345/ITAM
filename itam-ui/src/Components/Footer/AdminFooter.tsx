@@ -5,7 +5,7 @@ const {Link}  = Typography;
 
 export default function AdminFooter() {
     return (
-       <Footer style={{ textAlign: 'center',height:'10vh',color:"#303C6C" }}>
+       <Footer style={{ textAlign: 'center',height:'10vh',color:"#303C6C"}}>
            ITAM ©2021 by Hello_World
         </Footer>
     )

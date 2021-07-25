@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react"
 import { fetchData } from "../Grid/GridHelper"
 
 export {}
