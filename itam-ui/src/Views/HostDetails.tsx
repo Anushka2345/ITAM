@@ -1,22 +1,9 @@
-import React, {useState} from 'react'
-import {Card, Col, Row, Typography, Tree, Divider} from 'antd';
-import { EventDataNode, DataNode } from 'antd/lib/tree';
+import React from 'react'
+import {Card, Col, Row} from 'antd';
 import { Grid } from '../Components/Grid/Grid';
 import { PieChart } from '../Components/Charts/PieChart';
 
-const { Title, Text, Link, Paragraph } = Typography;
-const { DirectoryTree } = Tree;
 
-interface FileEventDataNode extends EventDataNode {
-    desc?: string
-}
-interface OnSelectEvent {
-    event: "select";
-    selected: boolean;
-    node: FileEventDataNode;
-    selectedNodes: DataNode[];
-    nativeEvent: MouseEvent;
-}
 
 export default function HostDetails() {
     return (

@@ -42,10 +42,6 @@ function getStepContent(step: any) {
         console.log("one", values)
     }
 
-    function stepTwoFinish(values: any) {
-        console.log("two", values)
-    }
-
     switch (step) {
         case 0:
             return (<Card><Form
@@ -205,9 +201,6 @@ export default function HorizontalNonLinearAlternativeLabelStepper() {
         setSkipped(new Set());
     };
 
-    const isStepSkipped = (step: any) => {
-        return skipped.has(step);
-    };
 
     function isStepComplete(step: any) {
         return completed.has(step);

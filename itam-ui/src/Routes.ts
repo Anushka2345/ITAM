@@ -24,6 +24,7 @@ import Page403 from "./Views/Pages/Page403";
 import Page500 from "./Views/Pages/Page500";
 import Login from "./Views/Pages/Login";
 import register from "./Views/Pages/register";
+import HorizontalNonLinearAlternativeLabelStepper from "./Components/Stepper/Stepper";
 
 
 const Routes: RouteType[] = [
@@ -157,6 +158,14 @@ const Routes: RouteType[] = [
         name: "Logout",
         icon: MinusOutlined,
         component: Login,
+        layout: "/auth",
+        isSidemenu: true,
+    },
+    {
+        path: "/continueRegistration",
+        name: "Continue Registration",
+        icon: MinusOutlined,
+        component: HorizontalNonLinearAlternativeLabelStepper,
         layout: "/auth",
         isSidemenu: true,
     },

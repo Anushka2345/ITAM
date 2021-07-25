@@ -4,7 +4,7 @@ import { Form, Input, Button, Checkbox, Card, Image} from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import {Link} from "react-router-dom"
 import Logo from "../../assets/logo.png"
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import axios from 'axios';
 import MuiAlert from '@material-ui/lab/Alert';
 
@@ -16,7 +16,7 @@ export default function Login(props: any) {
 
 
     async function onFinish(values: any)  {
-        const response = await axios.post("http://127.0.0.1:5000/login", values).then(
+         await axios.post("http://127.0.0.1:5000/login", values).then(
             res => {setError(2)}).catch(e => setError(1))
     }
     return (

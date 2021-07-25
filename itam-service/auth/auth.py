@@ -40,14 +40,13 @@ def login():
     return "Login Successful", 200
 
 
-@auth.route('/logout', methods=["GET", "POST"])
 @auth.route('/onboardUser', methods=['GET', 'POST'])
 @cross_origin()
 def onboard_user():
-    #resp = request.json
-    #ipaddr = resp['host'] + resp['subnet_mask']
-    #util.persistToDb(is_initial_scan=False, hosts=ipaddr) # Commented for DEMO
-    Mail(email, name)
+    resp = request.json
+    ipaddr = resp['host'] + resp['subnet_mask']
+    util.persistToDb(is_initial_scan=False, hosts=ipaddr) # Commented for DEMO
+    Mail("cursed.manor@gmail.com", "admin xyz")
     return "success", 200
 
 
