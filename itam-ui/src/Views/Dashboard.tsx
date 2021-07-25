@@ -36,7 +36,6 @@ export default function DYNPage() {
             <Col xs={24} sm={24} md={12}>
                 <Card style={{minHeight:"300px",backgroundColor:'WHITE'}} bordered>
                 <Link to="/admin/devicesDiscovered"><LineChart name="PORT_USED" title="Devices"/></Link>
-                    
                 </Card>
             </Col>
             <Col xs={24} sm={24} md={12}>

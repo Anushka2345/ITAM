@@ -28,9 +28,10 @@ import Page500 from "./Views/Pages/Page500";
 import Login from "./Views/Pages/Login";
 import register from "./Views/Pages/register";
 
+
 const Routes: RouteType[] = [
     // Default 404 Not Found Page
-    
+
     {
         path: "/error/404",
         name: "Dashboard",
@@ -103,7 +104,7 @@ const Routes: RouteType[] = [
                 component: Login,
                 layout: "/auth",
                 isSidemenu: false,
-             },
+            },
             {
                 path: "/login",
                 name: "Logout",
@@ -122,7 +123,7 @@ const Routes: RouteType[] = [
         layout: "/admin",
         isSidemenu: false,
     },
-     {
+    {
         path: "/hostDetails",
         name: "Host Details",
         icon: GithubOutlined,
@@ -130,7 +131,7 @@ const Routes: RouteType[] = [
         layout: "/admin",
         isSidemenu: false,
     },
-     {
+    {
         path: "/tcp",
         name: "TCP Details",
         icon: GithubOutlined,
@@ -138,7 +139,7 @@ const Routes: RouteType[] = [
         layout: "/admin",
         isSidemenu: false,
     },
-     {
+    {
         path: "/udp",
         name: "UDP Details",
         icon: GithubOutlined,
