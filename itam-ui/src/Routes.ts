@@ -167,7 +167,7 @@ const Routes: RouteType[] = [
         icon: MinusOutlined,
         component: HorizontalNonLinearAlternativeLabelStepper,
         layout: "/auth",
-        isSidemenu: true,
+        isSidemenu: false,
     },
 ]
 
